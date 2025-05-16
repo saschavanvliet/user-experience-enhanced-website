@@ -17,7 +17,7 @@ body {
         --font-size-header-m: 34px;
         --font-size-header-l: 40px;
     
-        --font-family-website: "Open Sans", sans-serif;
+        --font-family-website: poppins;
 
         --font-weight-normal: 400;
         --font-weight-bold: 700;
@@ -45,6 +45,10 @@ body {
         letter-spacing: var(--letter-spacing);
         font-weight: var(--font-weight-bold);
     }
+
+    p {
+        font-size: var(--font-size-header-s);
+      }
     
     /* p, a {
         font-family: var(--font-family-website);

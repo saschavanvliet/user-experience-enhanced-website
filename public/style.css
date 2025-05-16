@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Orbitron&family=Parkinsans:wght@300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&family=Varela+Round&display=swap');
+
 * {
     margin: 0;
     box-sizing: border-box;
@@ -44,7 +46,7 @@ h1 {
     }
 }
 
-.nav-links {
+.nav-links, summary{
     list-style: none;
     display: flex;
     flex-direction: column;
@@ -56,6 +58,8 @@ h1 {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
+    font-family: var(--font-family-website);
+    font-size: var(--font-size-header-s);
 
     @media (min-width: 769px) {
         flex-direction: row;
@@ -112,8 +116,8 @@ h1 {
     color: #ADD8E6;
 }
 
-p, section.stekjes-container {
-    padding: 1em;
+p.beschrijving, section.stekjes-container {
+    padding: 2em;
 }
 
   @view-transition {
@@ -184,14 +188,14 @@ p, section.stekjes-container {
   
     @media (min-width: 900px) {
       grid-template-areas:
-        "plaatje beschrijving"
-        "stekjes stekjes";
-      grid-template-columns: 1fr 1fr;
+        "plaatje"
+        "beschrijving"
+        "stekjes";
+      grid-template-columns: 1fr;
       gap: 2em;
     }
   }
   
-  @supports (display: grid) {
     .plaatje-container {
       grid-area: plaatje;
       position: relative;
@@ -202,6 +206,35 @@ p, section.stekjes-container {
       overscroll-behavior-inline: contain;
       scroll-behavior: smooth;
     }
+
+    .plaatje-container h1{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+        font-size: 132px;
+    }
+
+    .plaatje-container img {
+        max-width: 200px;
+        @media (min-width: 769px) {
+         max-width: 350px;
+     }}
+    
+     section.beschrijving {
+         background: var(--secondary-color-light-orange);
+         margin: 3em auto;
+         padding: 4em;
+         margin-top: 3em;
+         margin-bottom: 3em;
+         border-radius: 45px;
+         font-family: var(--font-family-website);
+         text-align: center;
+         @media (min-width: 769px) {
+             max-width: 1000px;
+         }    
+     }
   
     .stekjes-container {
       grid-area: stekjes;
@@ -217,7 +250,6 @@ p, section.stekjes-container {
         grid-template-columns: repeat(3, 1fr);
       }
     }
-  }
   
   .stekjes {
     background: var(--background-color-main); 
@@ -245,8 +277,7 @@ p, section.stekjes-container {
     margin-bottom: 1em;
     font-weight: var(--font-weight-bold);
     text-align: center;
-    color: var(--primary-color-brown);
-    
+    color: var(--primary-color-brown);  
   }
   
   .like-button {
@@ -301,6 +332,7 @@ p, section.stekjes-container {
   footer p {
     font-size: 1rem;
     line-height: 1.6;
+    font-family: var(--font-family-website);
   }
   
   footer a {
@@ -320,7 +352,7 @@ p, section.stekjes-container {
     background: var(--background-color-main);
     border-radius: 1em;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-    font-family: 'Segoe UI', sans-serif;
+    font-family: var(--font-family-website);
     text-align: center;
   
     @media (min-width: 768px) {
@@ -351,6 +383,3 @@ p, section.stekjes-container {
     opacity: 60%;
   }
 
-  p {
-    font-size: var(--font-size-header-s);
-  }

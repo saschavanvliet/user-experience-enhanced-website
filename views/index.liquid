@@ -11,10 +11,11 @@
 
 <main class="container">
     <section class="plaatje-container">
+      <h1>Stekjes</h1>
         {% for plaatje in plaatjes %}
             <img 
                 class="sfeerplaatjes" 
-                src="https://fdnd-agency.directus.app/assets/{{ plaatje.foto }}" alt="Sfeerfoto" width="200">
+                src="https://fdnd-agency.directus.app/assets/{{ plaatje.foto }}" alt="Sfeerfoto" width="350">
         {% endfor %}
     </section>
 
