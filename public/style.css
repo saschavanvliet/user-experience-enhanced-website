@@ -113,7 +113,7 @@ h1 {
 
 .nav-links li:hover a, 
 .nav-links details summary:hover {
-    color: #ADD8E6;
+    color: var(--secondary-color-light-orange);
 }
 
 p.beschrijving, section.stekjes-container {

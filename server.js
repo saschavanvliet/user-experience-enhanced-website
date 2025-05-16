@@ -39,26 +39,34 @@ app.get('/stekjes/:id', async function (request, response) {
   const stekjeId = request.params.id;
   const stekjeResponse = await fetch(`https://fdnd-agency.directus.app/items/bib_stekjes/${stekjeId}`);
   const stekjeData = await stekjeResponse.json();
-  
   response.render('stekjes.liquid', { stekje: stekjeData.data });
   });
 
-app.post('/stekjes/:id', async (req, res) => {
-  const stekjeId = req.params.id;
-  const userStekje = await fetch(`https://fdnd-agency.directus.app/items/bib_users_stekjes?filter={"bib_stekjes_id":${stekjeId},"bib_users_id":${userId}}`);
-  const userStekjeJSON = await userStekje.json();
-
-  if (userStekjeJSON.data.length) {
-    await fetch(`https://fdnd-agency.directus.app/items/bib_users_stekjes/${userStekjeJSON.data[0].id}`, { method: 'DELETE' });
+app.post('/stekjes/:id', async function (request, response) {
+  const stekjeId = request.params.id;
+  const userstekjeEntry = await fetch(`https://fdnd-agency.directus.app/items/bib_users_stekjes?filter={"bib_stekjes_id":${stekjeId},"bib_users_id":${userId}}`)
+  const userstekjeEntryJSON = await userstekjeEntry.json()
+  
+  if (userstekjeEntryJSON.data.length != 0) { 
+    await fetch(`https://fdnd-agency.directus.app/items/bib_users_stekjes/${userstekjeEntryJSON.data[0].id}`, {
+      method: 'DELETE' 
+    });
   } else {
-    await fetch('https://fdnd-agency.directus.app/items/bib_users_stekjes', {
-      method: 'POST',
-      body: JSON.stringify({ bib_stekjes_id: stekjeId, bib_users_id: userId }),
-      headers: { 'Content-Type': 'application/json' },
+  
+   await fetch('https://fdnd-agency.directus.app/items/bib_users_stekjes', {
+      method: 'POST',  
+      headers: { 
+        'Content-Type': 'application/json' 
+      },
+
+      body: JSON.stringify({
+        bib_users_id: userId, 
+        bib_stekjes_id: stekjeId 
+      })
     });
   }
-  res.redirect(303, '/');
-});
+    response.redirect(303, `/stekjes/${stekjeId}`);
+  });
 
 app.get('/404', (req, res) => {
   res.render('404.liquid');

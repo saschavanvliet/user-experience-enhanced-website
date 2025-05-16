@@ -33,8 +33,10 @@
                 
                 <form action="/stekjes/{{ stekje.id }}" method="POST">
                     <input type="hidden" name="from" value="{{ stekje.id }}">
-                    <button type="submit" class="like-button" aria-label="Like {{ stekje.naam }}">❤️</button>
+                    <button type="submit" class="like-button" aria-label="Like {{ stekje.naam }}">Like dit stekje 💚</button>
                 </form>
+    </button>
+</form>
             </section>
         {% endfor %}
     </section>
