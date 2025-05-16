@@ -29,10 +29,6 @@ header {
     margin-left: 10px;
 }
 
-h1 {
-    font-size: 1.5rem;
-}
-
 .menu-toggle {
     font-size: 1.5rem;
     background: none;
@@ -213,7 +209,9 @@ p.beschrijving, section.stekjes-container {
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 9999;
+        @media (min-width: 769px) {
         font-size: 132px;
+        }
     }
 
     .plaatje-container img {
