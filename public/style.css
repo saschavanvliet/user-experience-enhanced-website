@@ -1,0 +1,356 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #006400;
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    flex-wrap: wrap;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+    margin-left: 10px;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+.menu-toggle {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: block;
+
+    @media (min-width: 769px) {
+        display: none;
+    }
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    background-color: #006400;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+
+    @media (min-width: 769px) {
+        flex-direction: row;
+        position: static;
+        background-color: transparent;
+        width: auto;
+        max-height: none;
+        gap: 1.5rem;
+    }
+}
+
+.nav-links.open {
+    max-height: 300px;
+}
+
+.nav-links li {
+    text-align: center;
+    padding: 0.5rem 0;
+
+    @media (min-width: 769px) {
+        text-align: left;
+        padding: 0;
+    }
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.5rem;
+}
+
+.nav-links details summary {
+    cursor: pointer;
+}
+
+.nav-links details ul {
+    background-color: #228B22;
+    padding: 0.5rem;
+    position: static;
+    display: none;
+    
+    @media (min-width: 769px) {
+        position: absolute;
+    }
+}
+
+.nav-links details[open] ul {
+    display: block;
+}
+
+.nav-links li:hover a, 
+.nav-links details summary:hover {
+    color: #ADD8E6;
+}
+
+p, section.stekjes-container {
+    padding: 1em;
+}
+
+  @view-transition {
+    navigation: auto;
+  }
+
+  /* Old stuff going out */
+::view-transition-old(root) {
+    animation: out 1s linear forwards;
+  }
+  
+  /* New stuff coming in */
+  ::view-transition-new(root) {
+    animation: in 1s linear;
+  }
+
+  @keyframes out {
+    from {
+      /* opacity: 1; */
+      translate:0%;
+    }
+    to {
+      /* opacity: 0; */
+      translate:-100%;
+    }
+  }
+
+  @keyframes in {
+    from {
+      /* opacity: 1; */
+      translate:100%;
+    }
+    to {
+      /* opacity: 0; */
+      translate:0%;
+      
+    }
+  }
+  
+  /* Styling voor stekjespagina */
+  body {
+    background: var(--primary-color-beige);
+  }
+  
+  &.errorpage {     
+    background: var(--primary-color-green);
+    color: var(--primary-color-beige);
+  }
+  
+    a, summary, h1 {
+      color: var(--background-color-main);
+    }
+  
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+  
+  .container {
+    display: grid;
+    grid-template-areas:
+      "plaatje"
+      "beschrijving"
+      "stekjes";
+    grid-template-columns: 1fr;
+    gap: 1em;
+    width: 100%;
+  
+    @media (min-width: 900px) {
+      grid-template-areas:
+        "plaatje beschrijving"
+        "stekjes stekjes";
+      grid-template-columns: 1fr 1fr;
+      gap: 2em;
+    }
+  }
+  
+  @supports (display: grid) {
+    .plaatje-container {
+      grid-area: plaatje;
+      position: relative;
+      display: grid;
+      grid-auto-flow: column;
+      place-items: center;
+      overflow-x: auto;
+      overscroll-behavior-inline: contain;
+      scroll-behavior: smooth;
+    }
+  
+    .stekjes-container {
+      grid-area: stekjes;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1em;
+      width: 100%;
+  
+      @media (min-width: 600px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media (min-width: 900px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+  
+  .stekjes {
+    background: var(--background-color-main); 
+    padding: 1.5em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  }
+  
+  .stekjes:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); 
+  }
+  
+  .stekjes img {
+    width: 100%; 
+    height: auto;
+    border-radius: 5px; 
+    margin-bottom: 1em;
+  }
+  
+  .stekjes h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1em;
+    font-weight: var(--font-weight-bold);
+    text-align: center;
+    color: var(--primary-color-brown);
+    
+  }
+  
+  .like-button {
+    background: #f1f1f1;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 0.5em 1.2em;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .like-button:hover {
+    background: var(--primary-color-green);
+    color: #fff;
+  }
+  
+  .like-button:focus {
+    outline: none; 
+    box-shadow: 0 0 0 2px rgba(80, 180, 137, 0.5); 
+  }
+  
+  @supports (display: grid) {
+    .footer-container {
+      display: grid;
+      grid-template-columns: 1fr; 
+      gap: 2em; 
+      padding: 2em;
+      background: var(--primary-color-green);
+  
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 3em;
+      }
+      @media (min-width: 1024px) {
+        padding: 3em; 
+      }
+    }
+  }
+  
+  footer section {
+    background: var(--primary-color-beige);
+    padding: 1.5em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  footer h2 {
+    font-size: 1.5rem;
+  }
+  
+  footer p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  footer a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Styling detailpagina stekjes */
+  .stekje-detail {
+    max-width: 500px;
+    margin: 2em auto;
+    padding: 1.5em;
+    background: var(--background-color-main);
+    border-radius: 1em;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+  
+    @media (min-width: 768px) {
+      max-width: 700px;
+    }
+  
+    @media (min-width: 1024px) {
+      max-width: 1000px;
+    }
+  }
+  
+  .stekje-detail p {
+    margin-top: 0.5em;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1em;
+  }
+  
+  img.stekje-detail {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.75em;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 1em;
+  }
+
+  img.sfeerplaatjes {
+    opacity: 60%;
+  }
+
+  p {
+    font-size: var(--font-size-header-s);
+  }
