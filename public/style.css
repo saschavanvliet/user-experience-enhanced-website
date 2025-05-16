@@ -383,3 +383,11 @@ p.beschrijving, section.stekjes-container {
     opacity: 60%;
   }
 
+  .logo-container {
+    display: inline-block;
+    transition: transform 0.5s ease; /* Zachte overgang */
+}
+
+.logo-container:hover {
+    transform: rotateX(180deg); /* Draaien om de Y-as */
+}
