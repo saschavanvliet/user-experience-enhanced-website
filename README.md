@@ -130,9 +130,10 @@ Ik heb een gedeelte gemaakt van de website van Bieb in Bloei, namelijk de stekje
 
 > Hoe is de site geworden?
 
-<img width="400" alt="Image" src="https://github.com/user-attachments/assets/4d819d54-734a-4979-a941-4bef8b8cc2c4" />
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/a33021c6-5505-4e8b-8abf-a12def53e9c2" />
 
-<img width="400" alt="Image" src="https://github.com/user-attachments/assets/4db71aeb-b4d5-4bbd-be0f-addcba24f2ce" />
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/10a6bd48-7e79-4ccc-8cf6-f3a4bb30688f" />
+
 
 https://user-experience-enhanced-website-e64f.onrender.com/
 
