@@ -23,7 +23,7 @@ Het project Bieb in Bloei is een sociaal en duurzaam initiatief in samenwerking 
 
 De website is ontworpen met een progressive enhancement-aanpak, waardoor de kernfunctionaliteit ook zonder JavaScript en CSS intact blijft. Met Node.js, Express en Liquid worden dynamische pagina’s gegenereerd, en data wordt opgehaald uit een Directus CMS. De focus ligt op toegankelijkheid, gebruiksvriendelijkheid en een visueel aantrekkelijke weergave van duurzame initiatieven. Dit project draagt bij aan de missie van Bieb in Bloei om de buurt te verbinden door middel van groen en sociale interactie.
 
-https://the-web-is-for-everyone-interactive-wef2.onrender.com/
+user-experience-enhanced-website-e64f.onrender.com
 
 ### Debriefing opdrachtgever
 
@@ -136,6 +136,9 @@ Ik heb een gedeelte gemaakt van de website van Bieb in Bloei, namelijk de stekje
 
 
 https://user-experience-enhanced-website-e64f.onrender.com/
+
+## Designkeuzes
+Voor het uiteindelijke ontwerp is ervoor gekozen om betere hierarchie te implementeren. De functie van de website was nog niet heel duidelijk, dus hier is meer aandacht aan besteed. Daarnaast zijn de images op de homepagina als achtergrond gebruikt onder de header om meer samenhang te creeren binnen de website. Het is mooi dat er niet allemaal losse stukken zijn die niet in verband staan met elkaar.
 
 ## Kenmerken
 Voor dit project heb ik een interactieve website gebouwd waarbij ik gebruik heb gemaakt van progressive enhancement om een toegankelijke en soepele gebruikerservaring te bieden. De website bestaat onder andere uit een overzichtspagina, een detailpagina en een post-interactie. Op de overzichtspagina kunnen gebruikers een lijst met stekjes bekijken en doorklikken naar de desbetreffende detailpagina, waar meer informatie over een specifiek stekje wordt getoond. Daarnaast kunnen gebruikers stekjes liken zodat het in de database wordt opgeslagen.
